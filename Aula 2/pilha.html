@@ -1,0 +1,38 @@
+<script>
+    //http://latentflip.com/loupe
+    // Expandir buscas em: history api mdn https://developer.mozilla.org/en-US/
+    console.log('Pilha/Stack');
+     class BrowserHistoryStack {
+        constructor() {
+            this.cursor = 0;
+            this.data = [];
+        }
+    
+        push(item) {
+            this.cursor = this.cursor + 1;
+            this.data.push(item);
+        }
+        back() {
+            this.cursor = this.cursor - 1;
+            this.data.pop();
+        }
+
+        clear() {
+            this.data = []
+        }
+        print() {
+            console.log('Cursor', this.cursor);
+            console.log('itens atuais', this.data);
+        }
+
+     }
+    const history = new BrowserHistoryStack();
+    history.push('https://google.com');
+    history.push('https://youtube');
+    history.push('https://facebook.com');
+    history.print();
+    history.back();
+    history.print();
+</script>
+
+// atalho CTRL+F2 = muda todos os nomes do códiog
